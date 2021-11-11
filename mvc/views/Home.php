@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Welcome Home, John</h1>
-    <a href="/web211/LoginController/Logout/">Logout</a>
+    <a href="/web211/LoginController/">Login</a>
+    <a href="/web211/LoginController/logout/">Logout</a>
 </body>
 </html>

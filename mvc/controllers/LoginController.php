@@ -1,8 +1,8 @@
 <?php
 class LoginController extends Controller {
-    public $UserModel;
+    public $userModel;
     public function __construct(){
-        $this->UserModel = $this->model("User");
+        $this->userModel = $this->model("UserModel");
     }
     function index(){
         $this->view('Login');
@@ -11,12 +11,12 @@ class LoginController extends Controller {
     function register(){
         $this->view('Register');
     }
-    public function LoginHandler(){
+    public function login_handler(){
         if(isset($_POST['btn_login'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            $result = $this->UserModel->checkUser($username,$password);
+            $result = $this->userModel->check_user($username,$password);
 
             if(!$result) {
                 $mgs= "Incorrect username/password!";
@@ -25,14 +25,15 @@ class LoginController extends Controller {
             }
             $_SESSION['user_id']=$result['id'];
             $_SESSION['role'] = $result['roles'];
+            $_SESSION['username'] = $result['name'];
             if($result['roles']==0){
-                return $this->redirect("UserController","index",[]);
+                return $this->redirect("CustomerController","index",[]);
             }
-            return  $this->redirect("AdminController","index",[]);
+            return  $this->redirect("DashboardController","index",[]);
         }
     }
 
-    public function RegisterHandler(){
+    public function register_handler(){
         if(isset($_POST['btn_register'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -41,14 +42,14 @@ class LoginController extends Controller {
             $email = $_POST['email'];
             $address = $_POST['address'];
 
-            $result = $this->UserModel->addUser($username,$password,$name,$email,$address);
+            $result = $this->userModel->add_user($username,$password,$name,$email,$address);
 
             if(!$result) return;
             $this->view('Login');
         }
     }
 
-    public function Logout(){
+    public function logout(){
         session_destroy();
         return $this->redirect("LoginController","index");
     }

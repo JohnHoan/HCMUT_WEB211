@@ -4,6 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .dropdown{
+            margin-left: 10px;
+            display: inline-block;
+        }
+        .dropdown i{
+            display: inline-block;
+            font-size: 1.4rem;
+            padding-right: 1rem;
+
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        .dropdown:hover .dropdown-content {display: block;}
+    </style>
     <title></title>
 </head>
 <body>
@@ -11,14 +40,10 @@
         <header>
             <h2>
                 <label for="nav-toggle"
-                    ><i class="bx bxs-dashboard"></i
-                ></label>
-                Dashboard
+                    ><i class='bx bx-hive'></i>
+                </label>
+                HELIUM FARM
             </h2>
-            <div class="search-wrapper">
-                <i class="bx bx-search-alt-2"></i>
-                <input type="search" placeholder="Search" />
-            </div>
             <div class="user-wrapper">
                 <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6SuPNu_RXRJu3HT4QLaMf6JUlPyDhMmPTbA&usqp=CAU"
@@ -29,6 +54,14 @@
                 <div>
                     <h4><?php if(isset( $data['username'])) echo $data['username'];?></h4>
                     <small>Admin</small>
+                </div>
+                <div class="dropdown" style="float:right;">
+                    <i class='bx bxs-caret-down-circle'></i>
+                    <div class="dropdown-content">
+                        <a href="../UserController/change_password">Change password</a>
+                        <a href="../UserController/update_my_account">Update account</a>
+                        <a href="#">others</a>
+                    </div>
                 </div>
             </div>
         </header>

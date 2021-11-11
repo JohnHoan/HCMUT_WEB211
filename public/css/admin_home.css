@@ -246,15 +246,6 @@ main {
     padding: 5px;
 }
 
-/* #logout {
-    display: block;
-    border: 2px black solid;
-    border-radius: 5px;
-    padding: 5px;
-    margin-left: 20px;
-    color: white;
-    background-color: rgb(130, 131, 128);
-} */
 @media only screen and (max-width: 1200px) {
     .sidebar {
         width: 70px;

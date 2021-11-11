@@ -17,43 +17,43 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="./dashboard" id="bar-dashboard" >
+                    <a href="../DashboardController/index" id="bar-dashboard" >
                         <i class="bx bxs-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./products" id="bar-products">
+                    <a href="../ProductController/index" id="bar-products">
                         <i class="bx bxl-product-hunt"></i>
                         <span>Products</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./users" id="bar-customers">
+                    <a href="../UserController/index" id="bar-customers">
                         <i class="bx bx-user-circle"></i>
                         <span>Users</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./comments" id="bar-comments">
+                    <a href="../CommentController/index" id="bar-comments">
                         <i class="bx bxs-comment-detail"></i>
                         <span>Comments</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./orders" id="bar-orders">
+                    <a href="../OrderController/index" id="bar-orders">
                         <i class="bx bx-money"></i>
                         <span>Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./help" id="bar-help">
+                    <a href="../DashboardController/help" id="bar-help">
                         <i class="bx bx-help-circle"></i>
                         <span>Help</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/web211/LoginController/Logout/" id="logout">
+                    <a href="/web211/LoginController/logout/" id="logout">
                     <i class='bx bx-log-in'></i>
                         <span>Logout</span>
                     </a>

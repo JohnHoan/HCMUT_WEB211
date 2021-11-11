@@ -19,7 +19,12 @@
     <div class="main-content">  
         <main>
             <?php 
-                require_once "./mvc/views/admin/pages/".$data['pages'].".php";
+                if(isset($data['pages'])){
+                    require_once "./mvc/views/admin/pages/".$data['pages'].".php";
+                }
+                else if(isset($data['helper'])){
+                    require_once "./mvc/views/admin/helper/".$data['helper'].".php";
+                }
             ?>
         </main>
     </div>
