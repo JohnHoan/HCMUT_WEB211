@@ -48,7 +48,7 @@ class DashboardController extends Controller {
     private function process_data_top_sales($dataset){
         $result=array();
         foreach($dataset as $data){
-            $row=array("y"=>$data['0'],"label"=>$data['name']);
+            $row=array("y"=>$data['num'],"label"=>$data['name']);
             $result[] =$row;
         }
         return $result;
@@ -56,9 +56,9 @@ class DashboardController extends Controller {
     private function process_data_orders_weekly($dataset){
         $result=array();
         foreach($dataset as $data){
-            $time = strtotime($data['1']);
+            $time = strtotime($data['day']);
             $day = date('M d',$time);
-            $row=array("y"=>$data['0'],"label"=>$day);
+            $row=array("y"=>$data['num'],"label"=>$day);
             $result[] =$row;
         }
         return $result;

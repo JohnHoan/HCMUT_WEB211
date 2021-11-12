@@ -38,7 +38,6 @@ class ProductController extends Controller {
             if(!$imagename) $imagename="product_default.png";
 
             $result = $this->productModel->add_product($type,$name,$number,$description,$price,$discount,$imagename);
-            
             if(!$result) return;
             return $this->redirect("ProductController","index",[]);
         }
@@ -90,7 +89,7 @@ class ProductController extends Controller {
             $imagename = $this->save_image();
 
             $result = $this->productModel->update_product($type,$name,$number,$description,$price,$discount,$imagename, $id);
-            
+
             if(!$result) return;
             return $this->redirect("ProductController","index",[]);
         }

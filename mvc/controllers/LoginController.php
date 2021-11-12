@@ -16,8 +16,7 @@ class LoginController extends Controller {
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            $result = $this->userModel->check_user($username,$password);
-
+            $result = json_decode($this->userModel->check_user($username,$password),true);
             if(!$result) {
                 $mgs= "Incorrect username/password!";
                 $this->view('Login',['mgs'=>$mgs]);
