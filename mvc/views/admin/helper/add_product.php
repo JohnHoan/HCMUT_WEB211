@@ -9,7 +9,7 @@
 </head>
 <body style="margin-top: 60px;">
     <div><h2>Enter product information</h2></div>
-    <form action="./add_product" method="POST"  enctype="multipart/form-data">
+    <form action="./add_product" name="add_product" onsubmit="return validateFormAddProduct()" method="POST"  enctype="multipart/form-data">
         <div class="container">
             <label for="type"><b>Type</b></label>
             <input type="text" placeholder="Enter type" name="type" required>
@@ -26,7 +26,7 @@
             <label for="price"><b>Price</b></label>
             <input type="text" placeholder="Enter price" name="price" required>
 
-            <label for="discount"><b>Discount</b></label>
+            <label for="discount"><b>Discount (%)</b></label>
             <input type="text" placeholder="Enter discount" name="discount" required>
 
             <label for="image">Image</label>

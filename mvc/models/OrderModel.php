@@ -15,6 +15,14 @@ class OrderModel extends DB{
         $result = $stmt->get_result()->fetch_row();
         return json_encode($result);
     }
+
+    public function add_to_order($note,$number,$money,$is_paid, $id_product,$id_user){
+        $sql = "INSERT INTO orders(note, number, money, id_product, id_user) VALUES (?,?,?,?,?)";
+        $stmt = $this->prepared_query($this->con, $sql, [$note,$number,$money,$id_product,$id_user],"siiiii");
+        if($stmt->affected_rows>0) return true;
+        return false;
+    }
+
     public function orders_weekly(){
         $sql = "SELECT count(orders.id)as num, DATE(orders.create_time) as day FROM orders WHERE curdate()-DATE(orders.create_time)<=? GROUP BY DATE(orders.create_time)";
         $stmt = $this->prepared_query($this->con, $sql,[7]);

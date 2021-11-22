@@ -9,7 +9,7 @@
 </head>
 <body style="margin-top: 60px;">
     <div><h2>Enter user information</h2></div>
-    <form action="./add_user" method="POST">
+    <form action="./add_user" name="add_user" onsubmit="return validateFormAddUser()" method="POST">
         <div class="container">
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>

@@ -13,8 +13,8 @@ class LoginController extends Controller {
     }
     public function login_handler(){
         if(isset($_POST['btn_login'])){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+            $username = $this->check_input($_POST['username']);
+            $password = $this->check_input($_POST['password']);
             
             $result = json_decode($this->userModel->check_user($username,$password),true);
             if(!$result) {
@@ -26,7 +26,7 @@ class LoginController extends Controller {
             $_SESSION['role'] = $result['roles'];
             $_SESSION['username'] = $result['name'];
             if($result['roles']==0){
-                return $this->redirect("CustomerController","index",[]);
+                return $this->redirect("HomeController","index",[]);
             }
             return  $this->redirect("DashboardController","index",[]);
         }
@@ -34,12 +34,12 @@ class LoginController extends Controller {
 
     public function register_handler(){
         if(isset($_POST['btn_register'])){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+            $username = $this->check_input($_POST['username']);
+            $password = $this->check_input($_POST['password']);
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
+            $name = $this->check_input($_POST['name']);
+            $email = $this->check_input($_POST['email']);
+            $address = $this->check_input($_POST['address']);
 
             $result = $this->userModel->add_user($username,$password,$name,$email,$address);
 
@@ -50,7 +50,7 @@ class LoginController extends Controller {
 
     public function logout(){
         session_destroy();
-        return $this->redirect("LoginController","index");
+        return $this->redirect("HomeController","index");
     }
 
 }

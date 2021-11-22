@@ -8,7 +8,7 @@
 
 	<link rel="stylesheet" type="text/css" href="../public/css/register.css">
 
-	<title>Login Form - Pure Coding</title>
+	<title>Login Form</title>
 </head>
 <body>
 	<div class="container">
@@ -24,6 +24,12 @@
 				<?php 
 					if(isset($data['mgs'])) echo $data['mgs'];
 				?>
+			</div>
+			<div class="field-group" style="margin: 10px">
+				<div>
+					<input type="checkbox" name="remember" id="remember"> 
+					<label for="remember-me">Remember me</label>
+				</div>
 			</div>
 			<div class="input-group">
 				<button name="btn_login" class="btn">Login</button>

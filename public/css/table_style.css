@@ -5,6 +5,13 @@ body {
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
 }
+
+table thead tr td {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
 table.table tr th,
 table.table tr td {
     border-color: #070707;

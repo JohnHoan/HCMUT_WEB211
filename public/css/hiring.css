@@ -1,0 +1,66 @@
+.container-fluid {
+    background-color: #f5f5f5;
+}
+
+.banner {
+    display: flex;
+    height: 500px;
+    background-image: url('https://timviec365.vn/pictures/images_10_2021/HR-recruitment-la-gi-min.jpg');
+}
+
+.banner-text {
+    margin: auto;
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-size: 50px;
+}
+
+.banner-text h3 {
+    font-size: 40px;
+}
+
+.two-part {
+    display: flex;
+    margin: 20px 5% 0px 5%;
+    justify-content: space-between;
+}
+
+.column-1 {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+    text-align: justify;
+    background-color: #e8e8e8;
+}
+
+.column-1 h2 {
+    color: #0b870f;
+}
+
+.column-1 h3 {
+    color: #38cf47;
+}
+
+.column-2 {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+    text-align: justify;
+    background-color: #e8e8e8;
+}
+
+.column-2 h2 {
+    color: #0b870f;
+}
+
+.form {
+    width: 100%;
+}
+
+button {
+    background: #7bff33;
+}
+
+

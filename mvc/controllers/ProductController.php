@@ -27,12 +27,12 @@ class ProductController extends Controller {
 
     public function add_product(){
         if(isset($_POST['btn_add'])){   
-            $type = $_POST['type'];
-            $name = $_POST['name'];
-            $number = (int)$_POST['number'];
-            $description = $_POST['description'];
-            $price = (float)$_POST['price'];
-            $discount = (float)$_POST['discount'];
+            $type = $this->check_input($_POST['type']);
+            $name = $this->check_input($_POST['name']);
+            $number = $this->check_input($_POST['number']);
+            $description = $this->check_input($_POST['description']);
+            $price = $this->check_input($_POST['price']);
+            $discount = $this->check_input($_POST['discount']);
             $imagename = $this->save_image();
 
             if(!$imagename) $imagename="product_default.png";
@@ -80,12 +80,12 @@ class ProductController extends Controller {
         }
         if(isset($_POST['btn_update'])){
             $id = $_POST['product_id'];
-            $type = $_POST['type'];
-            $name = $_POST['name'];
-            $number = (int)$_POST['number'];
-            $description = $_POST['description'];
-            $price = (float)$_POST['price'];
-            $discount = (float)$_POST['discount'];
+            $type = $this->check_input($_POST['type']);
+            $name = $this->check_input($_POST['name']);
+            $number = $this->check_input($_POST['number']);
+            $description = $this->check_input($_POST['description']);
+            $price = $this->check_input($_POST['price']);
+            $discount = $this->check_input($_POST['discount']);
             $imagename = $this->save_image();
 
             $result = $this->productModel->update_product($type,$name,$number,$description,$price,$discount,$imagename, $id);

@@ -28,12 +28,12 @@ class UserController extends Controller {
 
     public function add_user(){
         if(isset($_POST['btn_add'])){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+            $username = $this->check_input($_POST['username']);
+            $password = $this->check_input($_POST['password']);
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
+            $name = $this->check_input($_POST['name']);
+            $email = $this->check_input($_POST['email']);
+            $address = $this->check_input($_POST['address']);
 
             $result = $this->userModel->add_user($username,$password,$name,$email,$address);
 
@@ -59,9 +59,9 @@ class UserController extends Controller {
         }
         if(isset($_POST['btn_update'])){
             $id = $_POST['user_id'];
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
+            $name = $this->check_input($_POST['name']);
+            $email = $this->check_input($_POST['email']);
+            $address = $this->check_input($_POST['address']);
             $role = $_POST['role'];
             $status = $_POST['status'];
 

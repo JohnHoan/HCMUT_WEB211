@@ -28,5 +28,6 @@
             ?>
         </main>
     </div>
+    <script src="../public/js/validation.js"></script>
 </body>
 </html>

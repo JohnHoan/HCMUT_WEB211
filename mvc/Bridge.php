@@ -1,5 +1,5 @@
 <?php
-
+define('SCRIPT_ROOT', 'http://localhost/web211/');
 // Process URL from browser
 require_once "./mvc/core/App.php";
 

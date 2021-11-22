@@ -9,7 +9,7 @@
 </head>
 <body style="margin-top: 60px;">
     <div><h2>Edit user information</h2></div>
-    <form action="./update_user" method="POST">
+    <form action="./update_user" name="update_user" onsubmit="return validateFormUpdateUser()" method="POST" >
         <div class="container">
             <input style="display: none;" type="text" name="user_id" value="<?=$data['user_info']['id']?>">
             <label for="name"><b>Name</b></label>

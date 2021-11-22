@@ -10,7 +10,7 @@
 <body style="margin-top: 60px;">
     
     <div><h2>Edit product information</h2></div>
-    <form action="./update_product" method="POST"  enctype="multipart/form-data">
+    <form action="./update_product" method="POST" name="update_product" onsubmit="return validateFormUpdateProduct()"  enctype="multipart/form-data">
         <div class="container">
             <input style="display: none;" type="text" name="product_id" value="<?=$data['product_info']['id']?>">
 
@@ -29,7 +29,7 @@
             <label for="price"><b>Price</b></label>
             <input type="text" placeholder="Enter price" name="price" value="<?php echo $data['product_info']['price']?>" required>
 
-            <label for="discount"><b>Discount</b></label>
+            <label for="discount"><b>Discount (%)</b></label>
             <input type="text" placeholder="Enter discount" name="discount" value="<?php echo $data['product_info']['discount']?>" required>
 
             <label for="image"><b>Image</b></label> </br>

@@ -7,8 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        echo $data['users'];
-    ?>
+    <a href="get.php?var='va'">Click</a>
 </body>
 </html>

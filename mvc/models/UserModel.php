@@ -47,7 +47,7 @@ class UserModel extends DB{
     public function add_user($username, $password, $name, $email, $address){
 
         $sql = "INSERT INTO users(username, password, name, email, address, roles) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $this->prepared_query($this->con, $sql, [$username, $password,$name, $email, $address, 0]);
+        $stmt = $this->prepared_query($this->con, $sql, [$username, $password,$name, $email, $address, 0],"sssssi");
         if($stmt->affected_rows>0) return true;
         return false;
     }

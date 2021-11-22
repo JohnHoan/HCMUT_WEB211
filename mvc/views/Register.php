@@ -8,11 +8,11 @@
 
 	<link rel="stylesheet" type="text/css" href="../public/css/register.css">
 
-	<title>Register Form - Pure Coding</title>
+	<title>Register Form</title>
 </head>
 <body>
 	<div class="container">
-		<form action="./register_handler" method="POST" class="login-email">
+		<form action="./register_handler" name="register_form" onsubmit="return validateFormRegister()" method="POST" class="login-email">
             <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
 			<div class="input-group">
 				<input type="text" placeholder="Username" name="username" id="username" required>
@@ -38,5 +38,6 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/main.js"></script>
+	<script src="../public/js/validation.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ class DashboardController extends Controller {
             return $this->redirect("LoginController","index");
         }
         if($_SESSION['role'] != 1){
-            return $this->redirect("CustomerController","index");
+            return $this->redirect("HomeController","index");
         }
 
         $this->userModel = $this->model("UserModel");
