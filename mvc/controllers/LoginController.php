@@ -7,7 +7,6 @@ class LoginController extends Controller {
     function index(){
         $this->view('Login');
     }
-
     function register(){
         $this->view('Register');
     }

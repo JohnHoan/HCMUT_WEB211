@@ -6,7 +6,7 @@ $(document).ready(function () {
             { input: username },
             function (data) {
                 if (data == 'true') {
-                    $('#mgs').html('exist');
+                    $('#mgs').html('username is already exist');
                 } else {
                     $('#mgs').html('');
                 }

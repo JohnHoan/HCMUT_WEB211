@@ -19,11 +19,13 @@ class CartController extends Controller{
         if(empty($cart_info)){
             $this->view("Home",[
                 "pages"=>"cart_empty",
+                "username"=>$this->userName,
             ]);
             return;
         }
         $this->view("Home",[
             "pages"=>"cart",
+            "username"=>$this->userName,
             "cart_info"=>$cart_info,
         ]);
     }

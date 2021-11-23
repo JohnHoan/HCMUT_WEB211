@@ -15,14 +15,16 @@ class HomeController extends Controller{
     public function index(){
         // send username to header
         $this->view("Home",[
-            "pages"=>"home"
+            "pages"=>"home",
+            "username"=>$this->userName,
         ]);
     }
 
 
     public function hiring(){
         $this->view("Home",[
-            "pages"=>"hiring"
+            "pages"=>"hiring",
+            "username"=>$this->userName,
         ]);
     }
 
@@ -33,6 +35,7 @@ class HomeController extends Controller{
         
         $this->view("Home",[
             "pages"=>"products",
+            "username"=>$this->userName,
             "product_list"=>$products,
         ]);
         return;
@@ -43,6 +46,7 @@ class HomeController extends Controller{
         $product = json_decode($product,true);
         $this->view("Home",[
             "pages"=>"product_detail",
+            "username"=>$this->userName,
             "product_info"=>$product,
         ]);
         return;
